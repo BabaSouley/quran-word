@@ -1,0 +1,135 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Radial ambient light */
+.ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 15% 15%, rgba(201, 168, 76, 0.07) 0%, transparent 100%),
+    radial-gradient(ellipse 50% 50% at 85% 85%, rgba(201, 168, 76, 0.05) 0%, transparent 100%),
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(36, 26, 12, 0.8) 0%, transparent 100%);
+}
+
+/* ─── Top bar ─────────────────────────────── */
+.topBar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 58px;
+  background: rgba(15, 10, 3, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.menuBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.menuBtn:hover { background: var(--gold-pale); }
+
+.menuBtn span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--gold);
+  border-radius: 1px;
+  transition: background 0.15s;
+}
+
+.topTitle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bismillah {
+  font-family: 'Scheherazade New', serif;
+  font-size: 1.35rem;
+  color: var(--gold);
+  direction: rtl;
+  text-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+  letter-spacing: 0.02em;
+}
+
+.topRight {}
+
+.currentLabel {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+  opacity: 0.5;
+}
+
+/* ─── Main ─────────────────────────────────── */
+.main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+/* ─── Empty state ──────────────────────────── */
+.empty {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: var(--gold-light);
+  opacity: 0.3;
+}
+
+.emptyIcon {
+  font-family: 'Scheherazade New', serif;
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.empty p {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* ─── Footer ───────────────────────────────── */
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid var(--gold-border);
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+  opacity: 0.25;
+}
+
+/* ─── Responsive ───────────────────────────── */
+@media (max-width: 600px) {
+  .main { padding: 1.5rem 1rem 2rem; }
+  .currentLabel { display: none; }
+}

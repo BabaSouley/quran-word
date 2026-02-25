@@ -1,0 +1,114 @@
+.verse {
+  margin-bottom: 1.75rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--gold-border);
+  background: rgba(20, 14, 5, 0.6);
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  animation: verseIn 0.5s ease both;
+}
+
+@keyframes verseIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.verse:hover {
+  background: rgba(201, 168, 76, 0.04);
+  border-color: rgba(201, 168, 76, 0.4);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-border);
+  background: transparent;
+  color: var(--gold);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+  flex-shrink: 0;
+}
+
+.badge:hover {
+  background: var(--gold-pale);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.verseRef {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.refAr {
+  font-family: 'Scheherazade New', serif;
+  font-size: 1.1rem;
+  color: var(--gold-light);
+  opacity: 0.4;
+  direction: rtl;
+}
+
+.refFr {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+  opacity: 0.3;
+  text-transform: uppercase;
+}
+
+/* Words — displayed RTL */
+.wordsRow {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  gap: 0.2rem 0.4rem;
+  justify-content: flex-start;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.translationBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.translationLabel {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+  opacity: 0.4;
+}
+
+.translation {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--cream-dim);
+  line-height: 1.75;
+}

@@ -1,0 +1,79 @@
+.word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: default;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  animation: wordIn 0.5s ease both;
+}
+
+@keyframes wordIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.word:hover,
+.word.active {
+  background: rgba(201, 168, 76, 0.13);
+  border-color: rgba(201, 168, 76, 0.4);
+  transform: translateY(-2px);
+}
+
+.arabic {
+  font-family: 'Scheherazade New', serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+  color: var(--cream);
+  direction: rtl;
+  line-height: 1.4;
+  text-align: center;
+  transition: color 0.18s;
+}
+
+.word:hover .arabic,
+.word.active .arabic {
+  color: #fff;
+}
+
+.translit {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 0.65rem;
+  font-style: italic;
+  color: var(--gold-light);
+  opacity: 0.5;
+  margin: 0.1rem 0;
+  text-align: center;
+  letter-spacing: 0.02em;
+  transition: opacity 0.18s;
+}
+
+.word:hover .translit,
+.word.active .translit {
+  opacity: 0.85;
+}
+
+.french {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  max-width: 90px;
+  line-height: 1.2;
+  transition: color 0.18s;
+}
+
+.word:hover .french,
+.word.active .french {
+  color: var(--gold-light);
+}
