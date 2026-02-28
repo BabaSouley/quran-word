@@ -11,7 +11,7 @@ export default function SurahHeader({ surah }) {
         <span className={styles.line} />
       </div>
       <div className={styles.meta}>
-        <span className={styles.number}>Sourate {surah.number}</span>
+        <span className={styles.number}>Sourate n° {surah.number}</span>
         <span className={styles.dot}>·</span>
         <span className={styles.french}>{surah.nameFr}</span>
         <span className={styles.dot}>·</span>
